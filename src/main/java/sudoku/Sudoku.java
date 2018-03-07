@@ -136,6 +136,7 @@ public class Sudoku {
                         " , , ,9, ,4, , ,3," +
                         " ,5, , , , ,4, ,2";
 
+        for (x=0; x<20; x++){
         Grid grid = new Grid(args.length == 0 ? diabolical03 : args[0]);
         System.out.println("Solve board");
         System.out.println(grid);
@@ -150,6 +151,7 @@ public class Sudoku {
 
         showResult(startTime, responseCF);
         actorSystem.terminate();
+        }
     }
 
     private static void showResult(long startTime, CompletableFuture<Object> responseCF) {

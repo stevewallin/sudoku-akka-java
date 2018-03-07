@@ -135,8 +135,8 @@ public class Sudoku {
                         "7,9, ,8, , , , , ," +
                         " , , ,9, ,4, , ,3," +
                         " ,5, , , , ,4, ,2";
-
-        for (int x=0; x<20; x++){
+        long testTime = System.currentTimeMillis();
+        for (int x=0; x<50; x++){
         Grid grid = new Grid(args.length == 0 ? diabolical03 : args[0]);
         System.out.println("Solve board");
         System.out.println(grid);
@@ -152,6 +152,7 @@ public class Sudoku {
         showResult(startTime, responseCF);
         actorSystem.terminate();
         }
+        System.out.printf("X solved %d ms%n", System.currentTimeMillis() - testTime);
     }
 
     private static void showResult(long startTime, CompletableFuture<Object> responseCF) {
